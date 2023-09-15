@@ -9,6 +9,8 @@ function Courses() {
 
 
   const [titles, setTitles] = useState([]);
+  const [totalCount, setCount] = useState(0);
+  const [totalRemainingCredits, setCredits] = useState(0);
 
   useEffect(() => {
     fetch("./courses.json")
@@ -16,9 +18,34 @@ function Courses() {
       .then((data) => setCourses(data));
   }, []);
 
+  
+
   const handleSelectAction = (course)=>{
+    const isPresent = titles.find( title => title.id == course.id)
+    let count = course.credit_hour
+    if(isPresent){
+       return alert("already enlisted this course")
+    }
+    else{
+        titles.forEach(title =>{
+            count = count + title.credit_hour;
+
+
+        } )
+        const remainingCredits = 20 - count;
+        if (count > 20){
+           return  alert("No remaining credits!!!!")
+        }
+        else{
+            setCredits(remainingCredits)
+        setCount(count)
+      
+        setTitles([...titles,course]);
+        }
+        
+
+    }
     
-    setTitles([...titles,course]);
   }
 //   console.log(titles);
 
@@ -31,7 +58,7 @@ function Courses() {
           }
         </div>
         <div className="w-[25%]">
-           <Cart titles={titles}  ></Cart>
+           <Cart titles={titles} totalCount ={totalCount}  totalRemainingCredits = {totalRemainingCredits} ></Cart>
         </div>
       </div>
     </>
