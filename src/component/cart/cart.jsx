@@ -7,18 +7,21 @@ import { list } from 'postcss';
 const Cart = ({titles , totalRemainingCredits,totalCount }) => {
     console.log(titles)
     return (
-        <div className='bg-white shadow-lg p-4 '>
-            <h1>Credit Hour Remaining: {totalRemainingCredits} </h1>
-            <h2>course names and</h2>
+        <div className='bg-white shadow-lg  p-2 lg:p-4 space-y-4  '>
+            <h1 className='text-blue-600 text-base font-bold  '>Credit Hour Remaining: {totalRemainingCredits} </h1>
+            <hr />
+            <h2 className='text-lg font-bold' >course names:-</h2>
 
             
               {
                 titles.map(title =>(
-                    <li key={title.id}>{title.title}</li>
+                    <li key={title.id} className='text-base font-normal'>{title.title}</li>
+                    
                 ))
               }
+              <hr />
 
-              <h3>total credit hour : {totalCount}</h3>
+              <h3 className='text-base font-medium' >total credit hour : {totalCount}</h3>
             
         </div>
     );

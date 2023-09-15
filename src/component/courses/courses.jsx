@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Course from "../course/course";
 import Cart from "../cart/cart";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Courses() {
   const [courses, setCourses] = useState([]);
@@ -24,7 +26,10 @@ function Courses() {
     const isPresent = titles.find( title => title.id == course.id)
     let count = course.credit_hour
     if(isPresent){
-       return alert("already enlisted this course")
+       return toast.success("already enlisted this course" ,{
+        position:"top-center",
+        autoClose:3000,
+       })
     }
     else{
         titles.forEach(title =>{
@@ -34,7 +39,10 @@ function Courses() {
         } )
         const remainingCredits = 20 - count;
         if (count > 20){
-           return  alert("No remaining credits!!!!")
+           return  toast.success("NO remaining credits!!!" ,{
+            position:"top-center",
+            autoClose:3000,
+           })
         }
         else{
             setCredits(remainingCredits)
@@ -47,19 +55,20 @@ function Courses() {
     }
     
   }
-//   console.log(titles);
+
 
   return (
     <>
       <div className="flex gap-4 p-3">
-        <div className="w-[75%] grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className=" md:w-[75%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {
             courses.map((course => <Course key={course.id} course ={course} handleSelectAction ={handleSelectAction} ></Course>))
           }
         </div>
-        <div className="w-[25%]">
+        <div className="md:w-[25%]">
            <Cart titles={titles} totalCount ={totalCount}  totalRemainingCredits = {totalRemainingCredits} ></Cart>
         </div>
+        <ToastContainer></ToastContainer>
       </div>
     </>
   );

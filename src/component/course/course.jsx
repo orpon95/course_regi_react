@@ -2,22 +2,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Rectangle from "./Rectangle 2-1.png";
-// import { BsBook } from 'react-icons/fa';
-// import Rectangle from "./Rectangle 2-1.png"
+import { BsBook } from 'react-icons/bs';
 
 const Course = ({ course,handleSelectAction }) => {
-//   console.log(course.cover_image);
+
 
   const { id, cover_image, title, details, credit_hour, price } = course;
   return (
-    <div className="shadow-lg bg-white rounded-lg p-4 space-y-2">
+    <div className="shadow-lg bg-white rounded-lg p-1 md:p-2 lg:p-4 space-y-4">
       <img src={cover_image} alt="" className="h-52" />
       <h3 className="text-base font-semibold">{title}</h3>
       <p className="text-sm font-normal">{details}</p>
-      <div className="flex justify-between">
-        <span className="text-sm font-medium"> $ price:{price} </span>
-        <span> </span>
-        <span className="text-sm font-medium"> credit: {credit_hour} hr</span>
+      <div className="flex justify-between items-center">
+        <span className="text-xs md:text-sm font-medium"> $ price:{price} </span>
+        <span className="mx-2"><BsBook></BsBook> </span>
+        <span className="text-xs md:text-sm font-medium"> credit: {credit_hour} hr</span>
         <br />
         
       </div>
