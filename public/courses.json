@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "cover_image": "https://i.ibb.co/RT4vVFW/Rectangle-2.png",
+      "title": "Python Programming Basics",
+      "details": "Get started with Python programming, covering variables, loops, and basic data structures.",
+      "price": 49.99,
+      "credit_hour": 3
+    },
+    {
+      "id": 2,
+      "cover_image": "https://i.ibb.co/fGj32wn/Rectangle-2-4.png",
+      "title": "C++ Programming Mastery",
+      "details": "Master C++ programming with advanced topics like templates, classes, and inheritance.",
+      "price": 59.99,
+      "credit_hour": 4
+    },
+    {
+      "id": 3,
+      "cover_image": "https://i.ibb.co/MZbN9BL/java.jpg",
+      "title": "Java Application Development",
+      "details": "Learn Java for application development, covering Java SE and Java EE frameworks.",
+      "price": 54.99,
+      "credit_hour": 4
+    },
+    {
+      "id": 4,
+      "cover_image": "https://i.ibb.co/j4DDMdr/Java-Script.jpg",
+      "title": "JavaScript Web Development",
+      "details": "Build interactive web applications with JavaScript, HTML5, and CSS3.",
+      "price": 49.99,
+      "credit_hour": 3
+    },
+    {
+      "id": 5,
+      "cover_image": "https://i.ibb.co/hgzk1Jn/Rectangle-2-3.png",
+      "title": "Algorithms and Data Structures",
+      "details": "Explore fundamental algorithms and data structures for efficient problem-solving.",
+      "price": 44.99,
+      "credit_hour": 3
+    },
+    {
+      "id": 6,
+      "cover_image": "https://i.ibb.co/n72X975/Rectangle-2-1.png",
+      "title": "MySQL Database Management",
+      "details": "Learn database design, SQL queries, and MySQL administration.",
+      "price": 49.99,
+      "credit_hour": 3
+    },
+    {
+      "id": 7,
+      "cover_image": "https://i.ibb.co/hBH6K58/Rectangle-2-6.png",
+      "title": "Cloud Computing Essentials",
+      "details": "Understand cloud computing concepts, AWS, Azure, and Google Cloud services.",
+      "price": 64.99,
+      "credit_hour": 4
+    },
+    {
+      "id": 8,
+      "cover_image": "https://i.ibb.co/RgfVfCK/Rectangle-3.png",
+      "title": "Advanced Data Structures",
+      "details": "Deepen your knowledge of data structures, including trees, graphs, and heaps.",
+      "price": 54.99,
+      "credit_hour": 3
+    },
+    {
+      "id": 9,
+      "cover_image": "https://i.ibb.co/ncZKSNg/cloud.jpg",
+      "title": "Secure Cloud Computing",
+      "details": "Explore security aspects in cloud computing and best practices for data protection.",
+      "price": 69.99,
+      "credit_hour": 4
+    }
+  ]
+  
