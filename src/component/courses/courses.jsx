@@ -2,26 +2,36 @@
 
 import React, { useEffect, useState } from "react";
 import Course from "../course/course";
+import Cart from "../cart/cart";
 
 function Courses() {
   const [courses, setCourses] = useState([]);
+
+
+  const [titles, setTitles] = useState([]);
+
   useEffect(() => {
     fetch("./courses.json")
       .then((res) => res.json())
       .then((data) => setCourses(data));
   }, []);
-//   console.log(courses);
+
+  const handleSelectAction = (course)=>{
+    const newTitlesArray = [...titles,course];
+    setTitles(newTitlesArray);
+  }
+//   console.log(titles);
 
   return (
     <>
-      <div className="flex">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="flex gap-4 p-3">
+        <div className="w-[75%] grid grid-cols-1 md:grid-cols-3 gap-4">
           {
-            courses.map((course => <Course key={course.id} course ={course} ></Course>))
+            courses.map((course => <Course key={course.id} course ={course} handleSelectAction ={handleSelectAction} ></Course>))
           }
         </div>
-        <div>
-            <h1>this is cart</h1>
+        <div className="w-[25%]">
+           <Cart titles={titles}  ></Cart>
         </div>
       </div>
     </>

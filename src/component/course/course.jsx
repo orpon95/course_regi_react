@@ -5,8 +5,9 @@ import Rectangle from "./Rectangle 2-1.png";
 // import { BsBook } from 'react-icons/fa';
 // import Rectangle from "./Rectangle 2-1.png"
 
-const Course = ({ course }) => {
-  console.log(course.cover_image);
+const Course = ({ course,handleSelectAction }) => {
+//   console.log(course.cover_image);
+
   const { id, cover_image, title, details, credit_hour, price } = course;
   return (
     <div className="shadow-lg bg-white rounded-lg p-4 space-y-2">
@@ -20,12 +21,13 @@ const Course = ({ course }) => {
         <br />
         
       </div>
-      <button className="bg-sky-500 text-white p-2 rounded-xl">Select</button>
+      <button className="bg-sky-500 text-white p-2 rounded-xl block w-5/6 mx-auto" onClick={()=> handleSelectAction(course)}>Select</button>
     </div>
   );
 };
 
 Course.propTypes = {
   course: PropTypes.object.isRequired,
+  handleSelectAction:PropTypes.func,
 };
 export default Course;
