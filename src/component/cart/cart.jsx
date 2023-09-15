@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { list } from 'postcss';
 
 const Cart = ({titles , totalRemainingCredits,totalCount }) => {
-    console.log(titles)
+    
     return (
         <div className='bg-white shadow-lg  p-2 lg:p-4 space-y-4  '>
             <h1 className='text-blue-600 text-base font-bold  '>Credit Hour Remaining: {totalRemainingCredits} </h1>
