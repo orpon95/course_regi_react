@@ -17,8 +17,8 @@ function Courses() {
   }, []);
 
   const handleSelectAction = (course)=>{
-    const newTitlesArray = [...titles,course];
-    setTitles(newTitlesArray);
+    
+    setTitles([...titles,course]);
   }
 //   console.log(titles);
 
